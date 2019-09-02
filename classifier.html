@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Load the latest version of TensorFlow.js -->
+    <script src="https://unpkg.com/@tensorflow/tfjs"></script>
+    <script src="https://unpkg.com/@tensorflow-models/mobilenet"></script>
+    <script src="https://unpkg.com/@tensorflow-models/knn-classifier"></script>
+    <script
+            src="https://code.jquery.com/jquery-3.4.1.slim.js"
+            integrity="sha256-BTlTdQO9/fascB1drekrDVkaKd9PkwBymMlHOiG+qLI="
+            crossorigin="anonymous">
+
+    </script>
+
+    <style>
+        #container {
+            display: grid;
+            grid-template-columns: 20% auto 20%;
+            margin: 0px auto;
+            width: 500px;
+            justify-content: center;
+        }
+        #img {
+            width: 500px;
+            height: 375px;
+            background-color: #666;
+            border: 10px #333 solid;
+            grid-column-start: span 3;
+        }
+
+        #container div {
+            grid-column-start: 2;
+            justify-self: center;
+        }
+    </style>
+</head>
+<body>
+<div id="console"></div>
+<!-- Add an image that we will use to test -->
+<h1 style="text-align: center">Simple Image Classifier</h1>
+<div id="container">
+    <div id="dvPreview">
+        <img id="img" crossOrigin src="https://i.imgur.com/JlUvsxa.jpg" width=227 height=227/>
+    </div>
+    <div>
+        <h2> Top 3 Prediction</h2>
+        <ol id="prediction">
+        </ol>
+    </div>
+</div>
+
+<form style="display:block;margin-top:50px;text-align: center;" action="upload.php" method="post" enctype="multipart/form-data">
+    <input type="file" id="fileupload">
+</form>
+<!-- Load index.js after the content of the page -->
+<script src="index.js"></script>
+</body>
+</html>
